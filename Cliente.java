@@ -16,7 +16,7 @@ public class Cliente {
         this.sexo = sexo;
         this.estadoCivil = estadoCivil;
 
-        System.out.println(this.nome + this.cpf + this.profissao + this.sexo + this.estadoCivil);
+        System.out.println("Cliente cria com as seguintes informações - Nome: " + this.nome + " CPF: "+ this.cpf + " Profissão: " + this.profissao + " Sexo: " + this.sexo + " Estado civil: " + this.estadoCivil);
         System.out.println("O numero total de Clientes cadastrados no momento é de: " + Cliente.total);
         System.out.println(" ");
     }
