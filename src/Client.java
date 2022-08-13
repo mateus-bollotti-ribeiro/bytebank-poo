@@ -1,43 +1,43 @@
 package bytebankpoo.src;
 
-public class Cliente {
-    private String nome;
+public class Client {
+    private String name;
     private String cpf;
-    private String profissao;
-    private String sexo;
-    private String estadoCivil;
+    private String profession;
+    private String sex;
+    private String maritalStatus;
     private static int total;
 
-    public Cliente(String nome, String cpf, String profissao, String sexo, String estadoCivil) {
-        Cliente.total++;
-        this.nome = nome;
+    public Client(String name, String cpf, String profession, String sex, String maritalStatus) {
+        Client.total++;
+        this.name = name;
         this.cpf = cpf;
-        this.profissao = profissao;
-        this.sexo = sexo;
-        this.estadoCivil = estadoCivil;
+        this.profession = profession;
+        this.sex = sex;
+        this.maritalStatus = maritalStatus;
 
-        System.out.println("Cliente cria com as seguintes informações - Nome: " + this.nome + " CPF: "+ this.cpf + " Profissão: " + this.profissao + " Sexo: " + this.sexo + " Estado civil: " + this.estadoCivil);
-        System.out.println("O numero total de Clientes cadastrados no momento é de: " + Cliente.total);
+        System.out.println("Cliente cria com as seguintes informações - Nome: " + this.name + " CPF: "+ this.cpf + " Profissão: " + this.profession + " Sexo: " + this.sex + " Estado civil: " + this.maritalStatus);
+        System.out.println("O numero total de Clientes cadastrados no momento é de: " + Client.total);
         System.out.println(" ");
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public String getProfissao() {
-        return profissao;
+    public String getProfession() {
+        return profession;
     }
 
-    public String getSexo() {
-        return sexo;
+    public String getSex() {
+        return sex;
     }
 
-    public String getEstadoCivil() {
-        return estadoCivil;
+    public String getMaritalStatus() {
+        return maritalStatus;
     }
 }

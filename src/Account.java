@@ -1,53 +1,53 @@
 package bytebankpoo.src;
 
-public abstract class Conta {
-    private double saldo;
-    private int agencia;
-    private int numero;
-    private Client titular;
+public abstract class Account {
+    private double balance;
+    private int agency;
+    private int number;
+    private Client holder;
     private static int total;
 
-    public Conta(Client titular, int agencia, int numero) {
-        Conta.total++;
-        this.agencia = agencia;
-        this.numero = numero;
-        this.titular = titular;
+    public Account(Client holder, int agency, int number) {
+        Account.total++;
+        this.agency = agency;
+        this.number = number;
+        this.holder = holder;
 
-        System.out.println("Conta criada na Agência " + this.agencia + " com o número " + this.numero);
-        System.out.println("O número total de contas criadas até o momento é de: " + Conta.total);
+        System.out.println("Conta criada na Agência " + this.agency + " com o número " + this.number);
+        System.out.println("O número total de contas criadas até o momento é de: " + Account.total);
         System.out.println(" ");
     }
 
-    public void deposita(double valor) {
-        this.saldo += valor;
+    public void deposit(double value) {
+        this.balance += value;
     }
 
-    public boolean limiteSaque(double valor) {
-        double limite = 1000;
+    public boolean withdrawalLimit(double value) {
+        double limit = 1000;
 
-        if (valor <= limite) {
+        if (value <= limit) {
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean saca(double valor) {
-        if (limiteSaque(valor)) {
+    public boolean withdrawal(double value) {
+        if (withdrawalLimit(value)) {
             System.out.println("Valor acima do limite diário");
             return false;
         }
-        if (valor > saldo) {
+        if (value > balance) {
 
             System.out.println("Saldo Insuficiente");
             return false;
         } else {
-            saldo -= valor;
+            balance -= value;
             return true;
         }
     }
 
-    public boolean limiteTransferencia(double valor) {
+    public boolean transferLimit(double valor) {
         double limite = 800;
 
         if (valor <= limite) {
@@ -58,10 +58,10 @@ public abstract class Conta {
         }
     }
 
-    public boolean transfere(double valor, Conta destino) {
-        if (limiteTransferencia(valor)) {
-            saca(valor);
-            destino.deposita(valor);
+    public boolean transfer(double value, Account destiny) {
+        if (transferLimit(value)) {
+            withdrawal(value);
+            destiny.deposit(value);
 
             System.out.println("A transferência foi bem-sucedida.");
 
@@ -73,19 +73,19 @@ public abstract class Conta {
 
     //GETTERS E SETTERS
 
-    public int getNumero() {
-        return this.numero;
+    public int getNumber() {
+        return this.number;
     }
 
-    public int getAgencia() {
-        return this.agencia;
+    public int getAgency() {
+        return this.agency;
     }
 
-    public Client getTitular() {
-        return titular;
+    public Client getHolder() {
+        return holder;
     }
 
     public static int getTotal() {
-        return Conta.total;
+        return Account.total;
     }
 }

@@ -1,14 +1,14 @@
 package bytebankpoo.src;
 
-public class ContaCorrente extends Conta {
+public class currentAccount extends Account {
 
-    public ContaCorrente(Client titular, int agencia, int numero) {
-        super(titular, agencia, numero);
+    public currentAccount(Client holder, int agency, int number) {
+        super(holder, agency, number);
     }
 
     @Override
-    public boolean saca(double valor) {
-        double valorASacar = valor + 0.2;
-        return super.saca(valorASacar);
+    public boolean withdrawal(double value) {
+        double amountToWithdraw = value + 0.2;
+        return super.withdrawal(amountToWithdraw);
     }
 }

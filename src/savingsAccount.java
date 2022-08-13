@@ -1,8 +1,8 @@
 package bytebankpoo.src;
 
-public class ContaPoupanca extends Conta {
+public class savingsAccount extends Account {
 
-    public ContaPoupanca(Client titular, int agencia, int numero) {
-        super(titular, agencia, numero);
+    public savingsAccount(Client holder, int agency, int number) {
+        super(holder, agency, number);
     }
 }
