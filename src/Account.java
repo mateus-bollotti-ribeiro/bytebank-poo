@@ -1,13 +1,13 @@
-package bytebankpoo;
+package bytebankpoo.src;
 
-public class Conta {
+public abstract class Conta {
     private double saldo;
     private int agencia;
     private int numero;
-    private Cliente titular;
+    private Client titular;
     private static int total;
 
-    public Conta(Cliente titular, int agencia, int numero) {
+    public Conta(Client titular, int agencia, int numero) {
         Conta.total++;
         this.agencia = agencia;
         this.numero = numero;
@@ -81,12 +81,8 @@ public class Conta {
         return this.agencia;
     }
 
-    public Cliente getTitular() {
+    public Client getTitular() {
         return titular;
-    }
-
-    public void setTitular(Cliente titular) {
-        this.titular = titular;
     }
 
     public static int getTotal() {
