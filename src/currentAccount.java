@@ -1,6 +1,6 @@
 package bytebankpoo.src;
 
-public class currentAccount extends Account {
+public final class currentAccount extends Account {
 
     public currentAccount(Client holder, int agency, int number) {
         super(holder, agency, number);

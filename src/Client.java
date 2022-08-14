@@ -1,8 +1,8 @@
 package bytebankpoo.src;
 
 public class Client {
-    private String name;
-    private String cpf;
+    private final String name;
+    private final String cpf;
     private String profession;
     private String sex;
     private String maritalStatus;

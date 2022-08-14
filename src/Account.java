@@ -1,10 +1,11 @@
 package bytebankpoo.src;
 
-public abstract class Account {
+public abstract sealed class Account
+        permits currentAccount, savingsAccount {
     private double balance;
-    private int agency;
-    private int number;
-    private Client holder;
+    private final int agency;
+    private final int number;
+    private final Client holder;
     private static int total;
 
     public Account(Client holder, int agency, int number) {
