@@ -48,10 +48,10 @@ public abstract sealed class Account
         }
     }
 
-    public boolean transferLimit(double valor) {
-        double limite = 800;
+    public boolean transferLimit(double value) {
+        double limit = 800;
 
-        if (valor <= limite) {
+        if (value <= limit) {
             return true;
         } else {
             System.out.println("O valor informado extrapola o valor máximo permitido para esta transação.");
