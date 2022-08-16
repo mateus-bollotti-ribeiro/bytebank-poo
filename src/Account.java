@@ -23,7 +23,7 @@ public abstract sealed class Account
         this.balance += value;
     }
 
-    public boolean withdrawalLimit(double value) {
+    public boolean withdrawLimit(double value) {
         double limit = 1000;
 
         if (value <= limit) {
@@ -33,8 +33,8 @@ public abstract sealed class Account
         }
     }
 
-    public boolean withdrawal(double value) {
-        if (withdrawalLimit(value)) {
+    public boolean withdraw(double value) {
+        if (withdrawLimit(value)) {
             System.out.println("Valor acima do limite diário");
             return false;
         }
@@ -61,7 +61,7 @@ public abstract sealed class Account
 
     public boolean transfer(double value, Account destiny) {
         if (transferLimit(value)) {
-            withdrawal(value);
+            withdraw(value);
             destiny.deposit(value);
 
             System.out.println("A transferência foi bem-sucedida.");
