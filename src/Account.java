@@ -14,6 +14,14 @@ public abstract sealed class Account
         this.number = number;
         this.holder = holder;
 
+        if(agency < 1) {
+            throw new IllegalArgumentException("Agência Inválida.");
+        }
+
+        if(number < 1) {
+            throw new IllegalArgumentException("Número de conta inválido.");
+        }
+
         System.out.println("Conta criada na Agência " + this.agency + " com o número " + this.number);
         System.out.println("O número total de contas criadas até o momento é de: " + Account.total);
         System.out.println(" ");
@@ -23,56 +31,25 @@ public abstract sealed class Account
         this.balance += value;
     }
 
-    public boolean withdrawLimit(double value) {
-        double limit = 1000;
-
-        if (value <= limit) {
-            return true;
-        } else {
-            return false;
+    public void withdraw(double value) throws Exception {
+        if(this.balance < value) {
+            throw new InsufficientBalanceException("Saldo insuficiente: R$" + this.balance + ", valor à sacar: R$" + value);
         }
+
+        this.balance -= value;
     }
 
-    public boolean withdraw(double value) {
-        if (withdrawLimit(value)) {
-            System.out.println("Valor acima do limite diário");
-            return false;
-        }
-        if (value > balance) {
 
-            System.out.println("Saldo Insuficiente");
-            return false;
-        } else {
-            balance -= value;
-            return true;
-        }
-    }
-
-    public boolean transferLimit(double value) {
-        double limit = 800;
-
-        if (value <= limit) {
-            return true;
-        } else {
-            System.out.println("O valor informado extrapola o valor máximo permitido para esta transação.");
-            return false;
-        }
-    }
-
-    public boolean transfer(double value, Account destiny) {
-        if (transferLimit(value)) {
-            withdraw(value);
-            destiny.deposit(value);
-
-            System.out.println("A transferência foi bem-sucedida.");
-
-            return true;
-        } else {
-            return false;
-        }
+    public void transfer(double value, Account destiny) throws Exception {
+        this.withdraw(value);
+        System.out.println("A transferência foi bem-sucedida.");
     }
 
     //GETTERS E SETTERS
+
+    public double getBalance() {
+        return this.balance;
+    }
 
     public int getNumber() {
         return this.number;

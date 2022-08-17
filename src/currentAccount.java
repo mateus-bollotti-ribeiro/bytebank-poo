@@ -7,9 +7,8 @@ public final class currentAccount extends Account {
     }
 
     @Override
-    public boolean withdraw(double value) {
+    public void withdraw(double value) throws Exception {
         double amountToWithdraw = value + 0.2;
-
-        return super.withdraw(amountToWithdraw);
+        super.withdraw(amountToWithdraw);
     }
 }
