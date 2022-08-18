@@ -1,4 +1,4 @@
-package bytebankpoo.src;
+package bytebankpoo.src.br.com.bytebankpoo.bank.model;
 
 public abstract sealed class Account
         permits currentAccount, savingsAccount {

@@ -1,4 +1,4 @@
-package bytebankpoo.src;
+package bytebankpoo.src.br.com.bytebankpoo.bank.model;
 
 public class Client {
     private final String name;
