@@ -1,9 +1,9 @@
 package bytebankpoo.src.br.com.bytebankpoo.bank.model.tests;
 
-import bytebankpoo.src.br.com.bytebankpoo.bank.model.Client;
-import bytebankpoo.src.br.com.bytebankpoo.bank.model.InsufficientBalanceException;
-import bytebankpoo.src.br.com.bytebankpoo.bank.model.currentAccount;
-import bytebankpoo.src.br.com.bytebankpoo.bank.model.savingsAccount;
+import bytebankpoo.src.br.com.bytebankpoo.bank.model.Client.Client;
+import bytebankpoo.src.br.com.bytebankpoo.bank.model.Exceptions.InsufficientBalanceException;
+import bytebankpoo.src.br.com.bytebankpoo.bank.model.Accounts.currentAccount;
+import bytebankpoo.src.br.com.bytebankpoo.bank.model.Accounts.savingsAccount;
 
 public class Testes {
     public static void main(String[] args) throws Exception {

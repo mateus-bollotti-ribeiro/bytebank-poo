@@ -1,4 +1,6 @@
-package bytebankpoo.src.br.com.bytebankpoo.bank.model;
+package bytebankpoo.src.br.com.bytebankpoo.bank.model.Accounts;
+
+import bytebankpoo.src.br.com.bytebankpoo.bank.model.Client.Client;
 
 public final class savingsAccount extends Account {
 

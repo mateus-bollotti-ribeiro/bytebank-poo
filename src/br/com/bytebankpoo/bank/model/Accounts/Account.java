@@ -1,4 +1,7 @@
-package bytebankpoo.src.br.com.bytebankpoo.bank.model;
+package bytebankpoo.src.br.com.bytebankpoo.bank.model.Accounts;
+
+import bytebankpoo.src.br.com.bytebankpoo.bank.model.Client.Client;
+import bytebankpoo.src.br.com.bytebankpoo.bank.model.Exceptions.InsufficientBalanceException;
 
 public abstract sealed class Account
         permits currentAccount, savingsAccount {
